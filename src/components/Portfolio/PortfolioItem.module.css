@@ -1,0 +1,32 @@
+.container {
+    border: 2px solid #383838;
+    margin: 20px 7px;
+    border-radius: 6px;;
+}
+
+.img-container img {
+    width: 100%;
+    max-width: 24rem;
+    max-height: 16rem;
+}
+
+.info-container {
+    margin: 5px 10px;
+}
+
+.title {
+    font-size: large;
+    font-weight: 500;
+    
+}
+
+.language-container {
+    margin: 14px auto;
+}
+
+.language {
+    border: 1px solid #383838;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 8px;
+}
