@@ -3,13 +3,13 @@ import classes from './TimelineItem.module.css';
 
 const TimelineItem = props => {
     return <li className={classes['list-item']}>
-        <div>
-            <span>{props.startingYear}</span>
-            <span>{props.title}</span>
-            <span>{props.yearsWorked}</span>
+        <div className={classes['info-container']}>
+            <span className={classes['year']}>{props.year}</span>
+            <span className={classes.title}>{props.title}</span>
+            <span className={classes['duration']}>{props.duration}</span>
         </div>
         <div>
-            <span>{props.description}</span>
+            <span className={classes.description}>{props.description}</span>
         </div>
     </li>
 }

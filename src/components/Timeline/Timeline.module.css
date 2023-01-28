@@ -1,10 +1,33 @@
 .container {
-    width: 40%;
+    width: 100%;
+    max-width: 40rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
+.container h2 {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+}
+
 .timeline {
     padding-left: 20px;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    list-style-position: inside;
+    margin-top: 10px;
+
+}
+
+.timeline:before {
+    position: absolute;
+    top: 3px;
+    bottom: 5%;
+    left: 0;
+    content: "";
+    width: 1px;
+    background: #c4c4c4;
 }

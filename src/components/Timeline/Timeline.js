@@ -1,34 +1,22 @@
 import React from "react";
+import timelineItems from "./timeline-items";
 import classes from "./Timeline.module.css";
 import TimelineItem from "./TimelineItem";
 
-const description =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.";
+const items = timelineItems.map((item) => (
+  <TimelineItem
+    year={item.year}
+    title={item.title}
+    duration={item.duration}
+    description={item.description}
+  />
+));
 
 const Timeline = (props) => {
   return (
     <div className={classes.container}>
-      <h3>Timeline</h3>
-      <ul className={classes.timeline}>
-        <TimelineItem
-          startingYear="2016"
-          title="Computer Science Student"
-          yearsWorked="4"
-          description={description}
-        />
-        <TimelineItem
-          startingYear="2016"
-          title="Computer Science Student"
-          yearsWorked="4"
-          description={description}
-        />
-        <TimelineItem
-          startingYear="2016"
-          title="Computer Science Student"
-          yearsWorked="4"
-          description={description}
-        />
-      </ul>
+      <h2>Timeline</h2>
+      <ul className={classes.timeline}>{items}</ul>
     </div>
   );
 };
