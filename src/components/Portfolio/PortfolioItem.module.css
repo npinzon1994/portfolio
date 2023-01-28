@@ -1,7 +1,8 @@
 .container {
     border: 2px solid #383838;
     margin: 20px 7px;
-    border-radius: 6px;;
+    border-radius: 6px;
+    list-style-type: none;
 }
 
 .img-container img {

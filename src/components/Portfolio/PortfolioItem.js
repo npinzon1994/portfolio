@@ -7,7 +7,7 @@ const PortfolioItem = (props) => {
   ));
 
   return (
-    <div className={classes.container}>
+    <li className={classes.container}>
       <div className={classes["img-container"]}>
         <img src={props.img.src} alt={props.img.alt} />
       </div>
@@ -15,7 +15,7 @@ const PortfolioItem = (props) => {
         <span className={classes.title}>{props.title}</span>
         <div className={classes["language-container"]}>{languages}</div>
       </div>
-    </div>
+    </li>
   );
 };
 

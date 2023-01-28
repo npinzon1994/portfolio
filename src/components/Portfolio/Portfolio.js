@@ -13,7 +13,7 @@ const items = portfolioItems.map((item) => (
 ));
 
 const Portfolio = (props) => {
-  return <div className={classes.portfolio}>{items}</div>;
+  return <ul className={classes.portfolio}>{items}</ul>;
 };
 
 export default Portfolio;

@@ -10,6 +10,7 @@ const App = () => {
     <Fragment>
       <Intro />
       <Portfolio />
+      <Timeline />
     </Fragment>
   );
 };
