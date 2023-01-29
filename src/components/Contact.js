@@ -141,7 +141,7 @@ const Contact = (props) => {
           ref={messageInputRef}
           value={message}
         />
-        {messageHasError && <span className={classes.invalid}>*Don't forget to type your message!</span>}
+        {messageHasError && <span className={classes.invalid}>*Message is required</span>}
         {isSending && <p>Sending Email...</p>}
         {sendSuccessful && !error && <p className={classes.success}>Email sent successfully!</p>}
         {error && <p className={classes.error}>{error}</p>}

@@ -8,9 +8,7 @@ const PortfolioItem = (props) => {
 
   return (
     <li className={classes.container}>
-      <div className={classes["img-container"]}>
-        <img src={props.img.src} alt={props.img.alt} />
-      </div>
+      <img src={props.img.src} alt={props.img.alt} className={classes.image} />
       <div className={classes["info-container"]}>
         <span className={classes.title}>{props.title}</span>
         <div className={classes["language-container"]}>{languages}</div>
