@@ -20,17 +20,19 @@
 .title {
     font-size: large;
     font-weight: 500;
-    margin: 5px 10px;
+    margin: 5px 18px;
 }
 
 .language-container {
     display: flex;
+    margin-left: 10px;
 }
 
 .language {
-    border: 1px solid #383838;
+    border: 3px solid #383838;
     border-radius: 7px;
-    padding: 5px;
-    margin: 8px 0 8px 8px;
+    padding: 5px 7px 7px 7px;
+    margin: 8px 0 18px 8px;
+    font-weight: 500;
 }
 

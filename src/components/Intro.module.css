@@ -8,16 +8,18 @@
 }
 
 .container h1 {
-    margin-bottom: 16px;
+    margin-bottom: 6px;
+    font-size: 54pt;
 }
 
 .container h3 {
     margin: 0;
+    font-size: 18pt;
 }
 
 .container p {
     text-align: justify;
-    margin: 16px auto;
+    margin: 10px auto 16px auto;
 }
 
 @media (max-width: 768px) {
@@ -29,6 +31,14 @@
 @media (max-width: 425px) {
     .container {
         max-width: 24rem;
+    }
+
+    .container h1 {
+        font-size: 30pt;
+    }
+
+    .container h3 {
+        font-size: 14pt;
     }
 }
 
