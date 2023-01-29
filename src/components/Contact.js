@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import Title from "./UI/Title";
 import useInput from "../hooks/use-input";
 
+//useReducer data
 const defaultState = { isSending: false, sendSuccessful: null };
 const sendReducer = (state, action) => {
   switch (action.type) {
@@ -20,6 +21,7 @@ const sendReducer = (state, action) => {
   }
 };
 
+//form validation functions
 const isNotEmpty = (value) => value !== "";
 const isValidEmail = (value) =>
   value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
@@ -28,6 +30,7 @@ const Contact = (props) => {
   const [sendingState, dispatchSending] = useReducer(sendReducer, defaultState);
   const [error, setError] = useState();
 
+  //useInput(s)
   const {
     enteredValue: name,
     valueIsValid: nameIsValid,
@@ -55,6 +58,7 @@ const Contact = (props) => {
     reset: resetMessage,
   } = useInput(isNotEmpty);
 
+  //refs
   const form = useRef();
   const nameInputRef = useRef();
   const emailInputRef = useRef();
@@ -99,14 +103,7 @@ const Contact = (props) => {
   };
 
   const { isSending, sendSuccessful } = sendingState;
-
-  const nameClasses = `${classes.input} ${nameHasError ? classes.invalid : ""}`;
-  const emailClasses = `${classes.input} ${
-    emailHasError ? classes.invalid : ""
-  }`;
-  const messageClasses = `${classes["text-area"]} ${
-    messageHasError ? classes.invalid : ""
-  }`;
+  const nameClasses = `${classes.input} ${classes.name}`;
 
   return (
     <div className={classes.container}>
@@ -122,29 +119,32 @@ const Contact = (props) => {
           ref={nameInputRef}
           value={name}
         />
+        {nameHasError && <span className={classes.invalid}>*Name is required</span>}
         <input
           type="email"
           placeholder="Email"
           name="email"
           onChange={emailChangeHandler}
           onBlur={validateEmailOnBlur}
-          className={emailClasses}
+          className={classes.input}
           ref={emailInputRef}
           value={email}
         />
+        {emailHasError && <span className={classes.invalid}>*Invalid Email</span>}
         <textarea
           placeholder="Message"
           name="message"
           rows="10"
           onChange={messageChangeHandler}
           onBlur={validateMessageOnBlur}
-          className={messageClasses}
+          className={classes['text-area']}
           ref={messageInputRef}
           value={message}
         />
+        {messageHasError && <span className={classes.invalid}>*Don't forget to type your message!</span>}
         {isSending && <p>Sending Email...</p>}
-        {sendSuccessful && !isSending && <p>Email sent successfully!</p>}
-        {error && <p>{error}</p>}
+        {sendSuccessful && !error && <p className={classes.success}>Email sent successfully!</p>}
+        {error && <p className={classes.error}>{error}</p>}
         <button type="submit">Let's Chat</button>
       </form>
     </div>

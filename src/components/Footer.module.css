@@ -1,0 +1,30 @@
+.footer {
+    width: 100%;
+    max-width: 40rem;
+    margin: 66px auto 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.github {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+
+.linkedin {
+  height: 40px;
+  width: 40px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    color: #8b8b8b;
+}

@@ -12,6 +12,7 @@ const App = () => {
       <Portfolio />
       <Timeline />
       <Contact />
+      <Footer />
     </Fragment>
   );
 };
