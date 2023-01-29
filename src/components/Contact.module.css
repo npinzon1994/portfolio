@@ -67,3 +67,27 @@
   cursor: pointer;
   margin-top: 12px;
 }
+
+@media (max-width: 768px) {
+  .container {
+      max-width: 32rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+      max-width: 24rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+      max-width: 19rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+      max-width: 17rem;
+  }
+}

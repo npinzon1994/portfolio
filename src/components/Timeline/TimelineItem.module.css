@@ -24,6 +24,7 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .year {
@@ -33,6 +34,7 @@
     border-radius: 10px;
     font-weight: 500;
     margin-right: 20px;
+    
 }
 
 .title {
@@ -51,3 +53,20 @@
     font-size: large;
     color: #8b8b8b;
 }
+
+@media (max-width: 425px) {
+    .year {
+        font-size: small;
+        margin-bottom: 8px;
+        margin-right: 16px;
+    }
+
+    .title{
+        font-size: large;
+        margin-bottom: 6px;
+    }
+
+    .duration{
+        margin-bottom: 6px;
+    }
+  }

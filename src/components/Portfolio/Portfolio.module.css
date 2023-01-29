@@ -1,19 +1,51 @@
 .container {
   width: 100%;
-  max-width: 56rem;
+  max-width: 72rem;
   margin: 6px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .portfolio {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   padding-left: 0;
   flex-wrap: wrap;
-  
+  margin: auto;
 }
 
-@media (max-width: 965px) {
-  .container{
-    max-width: 37.9rem;
+@media (max-width: 1148px) {
+  .container {
+    max-width: 48rem;
   }
+}
+
+@media (max-width: 754px) {
+  .container {
+    max-width: 24rem;
+  }
+}
+
+@media (max-width:816px) {
+  .container {
+    max-width: 24rem;
+    
+  }
+}
+
+@media (max-width: 425px) {
+    .container {
+        max-width: 18rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 18rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        max-width: 17rem;
+    }
 }
