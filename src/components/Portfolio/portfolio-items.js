@@ -1,4 +1,5 @@
 import bbScreenshot from "../../assets/bb-screenshot.PNG";
+import portfolioScreenshot from "../../assets/portfolio-screenshot.png";
 
 const languages = {
   budgetBreakdown: ["React", "Javascript", "CSS"],
@@ -17,7 +18,7 @@ const portfolioItems = [
   },
   {
     id: "P2",
-    img: { src: bbScreenshot, alt: "Screenshot of Developer Portfolio App" },
+    img: { src: portfolioScreenshot, alt: "Screenshot of Developer Portfolio App" },
     title: "Developer Portfolio",
     languages: developerPortfolio,
   },

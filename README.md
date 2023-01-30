@@ -1,5 +1,4 @@
 <h1>Professional Developer Portfolio</h1>
-
 <h3>
   <em>Coded in React.js</em> 
   <img src="https://user-images.githubusercontent.com/22157316/215364065-9a120f6a-f86d-4211-8f40-78a9acaca45c.png" height="30px" width="30px"/>

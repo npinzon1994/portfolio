@@ -1,38 +1,38 @@
 const timelineItems = [
   {
-    year: "Current",
+    year: "2022 - Present",
     title: "Indie Front-End Web Developer",
     duration: "1 year",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "After graduating with my BS in Computer Science, I took it upon myself to learn React.js since web development was my favorite aspect of college. Now I'm an Indie Web Developer building applications for myself to show prospective employers.",
   },
   {
     year: "2020",
     title: "Bachelor's Degree in Computer Science",
     duration: "4 years",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Throughout these four years, I had gained quite a wealth of knowledge ranging from core design principles to data structures to computer architecture. College is also where I got my introduction to HTML, CSS and JavaScript.",
   },
   {
     year: "2019",
     title: "Web Dev Intern",
     duration: "1 year",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "During my senior year of college, I did an internship for the consortium of which my school was a part. I was responsible for meeting with the Executive Director, discussing and implementing changes to the site's layout to capture viewers' interest.",
   },
   {
     year: "2017",
     title: "Computer Science Tutor",
     duration: "2 years",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "During my second year of college, my computer science teacher asked me to be a tutor. There I helped first-year students with their projects by providing guidance and clarification.",
   },
   {
     year: "2016",
     title: "First Coding Class",
     duration: "the beginning",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "The inception of my coding journey -- I took my first Java programming class that set the stage for the rest of my learning as a Computer Science Student.",
   },
 ];
 

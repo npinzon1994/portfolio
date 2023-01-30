@@ -2,7 +2,7 @@
     text-align: center;
     width: 100%;
     max-width: 40rem;
-    margin: 26px auto 10px auto;
+    margin: 26px auto 18px auto;
     display: flex;
     flex-direction: column;
 }
@@ -21,13 +21,15 @@
 }
 
 .container h3 {
-    margin: 0;
+    margin: 12px auto;
     font-size: 18pt;
 }
 
 .container p {
     text-align: justify;
     margin: 10px auto 16px auto;
+    font-size: larger;
+    font-weight: 500;
 }
 
 
