@@ -1,27 +1,14 @@
-import React, { useRef, useState, useReducer, useContext } from "react";
-import classes from "./Contact.module.css";
+import React, { useRef, useState, useReducer, useContext, useEffect } from "react";
+import classes from "../Contact/Contact.module.css";
+import emailClasses from "../Contact/EmailStatus.module.css";
 import emailjs from "@emailjs/browser";
-import Title from "./UI/Title";
-import useInput from "../hooks/use-input";
-import ThemeContext from "../store/theme-context";
-import LoadingSpinner from "./LoadingSpinner";
-
-//useReducer data
-const defaultState = { isSending: false, sendSuccessful: null };
-const sendReducer = (state, action) => {
-  switch (action.type) {
-    case "SENDING":
-      return { isSending: true, sendSuccessful: state.sendSuccessful };
-    case "NOT_SENDING":
-      return { isSending: false, sendSuccessful: state.sendSuccessful };
-    case "SEND_SUCCESSFUL":
-      return { isSending: state.isSending, sendSuccessful: true };
-    case "SEND_UNSUCCESSFUL":
-      return { isSending: state.isSending, sendSuccessful: false };
-    default:
-      return defaultState;
-  }
-};
+import Title from "../UI/Title";
+import useInput from "../../hooks/use-input";
+import ThemeContext from "../../store/theme-context";
+import EmailStatus from "../Contact/EmailStatus";
+import loadingSpinner from "../../assets/loading-spinner.gif";
+import ErrorMessage from "../Contact/ErrorMessage";
+import emailSendReducer from "./email-send-reducer";
 
 //form validation functions
 const isNotEmpty = (value) => value !== "";
@@ -29,7 +16,9 @@ const isValidEmail = (value) =>
   value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 
 const Contact = (props) => {
-  const [sendingState, dispatchSending] = useReducer(sendReducer, defaultState);
+  const { reducer, defaultState } = emailSendReducer;
+  const [sendingState, dispatchSending] = useReducer(reducer, defaultState);
+  const [statusMsgVisible, setStatusMsgVisible] = useState(false);
   const [error, setError] = useState();
 
   const themeContext = useContext(ThemeContext);
@@ -74,6 +63,7 @@ const Contact = (props) => {
 
   const submitForm = async (event) => {
     event.preventDefault();
+    setError(null);
 
     try {
       if (!formIsValid) {
@@ -97,21 +87,56 @@ const Contact = (props) => {
 
       console.log(result.text);
     } catch (error) {
+      setError(error.text);
       dispatchSending({ type: "NOT_SENDING" });
       dispatchSending({ type: "SEND_UNSUCCESSFUL" });
-      setError(error.text);
+      setStatusMsgVisible(false);
     }
     dispatchSending({ type: "SEND_SUCCESSFUL" });
     dispatchSending({ type: "NOT_SENDING" });
+    setStatusMsgVisible(false);
+    setTimeout(() => {
+      setStatusMsgVisible(true);
+    }, 2000);
     resetName();
     resetEmail();
     resetMessage();
   };
 
+  useEffect(() => {
+    setStatusMsgVisible(true);
+  }, [])
+
   const { isSending, sendSuccessful } = sendingState;
   const nameClasses = `${classes.input} ${classes.name} ${
     isDarkTheme ? classes["dark-input"] : ""
   }`;
+
+  //determining which status message should be shown
+  let emailStatus;
+  if (isSending) {
+    emailStatus = (
+      <EmailStatus
+        status="Sending..."
+        className={emailClasses.sending}
+        img={{
+          src: loadingSpinner,
+          alt: "Loading Spinner",
+          className: emailClasses["loading-spinner"],
+        }}
+      />
+    );
+  } else if (!statusMsgVisible && !error) {
+    emailStatus = (
+      <EmailStatus
+        status="Email sent successfully!"
+        className={`${classes.success} ${
+          isDarkTheme ? classes["dark-success"] : ""
+        }`}
+        img={{ className: emailClasses["loading-spinner-hidden"] }}
+      />
+    );
+  }
 
   return (
     <div className={classes.container}>
@@ -127,15 +152,7 @@ const Contact = (props) => {
           ref={nameInputRef}
           value={name}
         />
-        {nameHasError && (
-          <span
-            className={`${classes.invalid} ${
-              isDarkTheme ? classes["dark-invalid"] : ""
-            }`}
-          >
-            *Name is required
-          </span>
-        )}
+        {nameHasError && <ErrorMessage message="*Name is required" />}
         <input
           type="email"
           placeholder="Email"
@@ -148,15 +165,7 @@ const Contact = (props) => {
           ref={emailInputRef}
           value={email}
         />
-        {emailHasError && (
-          <span
-            className={`${classes.invalid} ${
-              isDarkTheme ? classes["dark-invalid"] : ""
-            }`}
-          >
-            *Invalid Email
-          </span>
-        )}
+        {emailHasError && <ErrorMessage message="*Invalid Email" />}
         <textarea
           placeholder="Message"
           name="message"
@@ -169,19 +178,8 @@ const Contact = (props) => {
           ref={messageInputRef}
           value={message}
         />
-        {messageHasError && (
-          <span
-            className={`${classes.invalid} ${
-              isDarkTheme ? classes["dark-invalid"] : ""
-            }`}
-          >
-            *Message is required
-          </span>
-        )}
-        {isSending && <LoadingSpinner />}
-        {(sendSuccessful) && (
-          <p className={`${classes.success} ${isDarkTheme ? classes['dark-success'] : ''}`}>Email sent successfully!</p>
-        )}
+        {messageHasError && <ErrorMessage message="*Message is required" />}
+        {emailStatus}
         {error && <p className={classes.error}>{error}</p>}
         <button
           type="submit"

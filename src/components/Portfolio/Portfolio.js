@@ -8,7 +8,10 @@ const items = portfolioItems.map((item) => (
     key={item.id}
     img={item.img}
     title={item.title}
+    description={item.description}
     languages={item.languages}
+    link={item.link}
+    target={item.target}
   />
 ));
 

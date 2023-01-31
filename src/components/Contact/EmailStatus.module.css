@@ -13,3 +13,7 @@
   height: 28px;
   width: 28px;
 }
+
+.loading-spinner-hidden {
+  display: none;
+}

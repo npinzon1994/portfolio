@@ -66,15 +66,6 @@
   background: none;
 }
 
-.invalid {
-  color: rgb(170, 41, 41);
-  margin-top: 6px;
-}
-
-.dark-invalid {
-  color: rgb(221, 91, 91);
-}
-
 .success {
   font-size: larger;
   color: rgb(77, 131, 77);
