@@ -1,4 +1,10 @@
-import React, { useRef, useState, useReducer, useContext, useEffect } from "react";
+import React, {
+  useRef,
+  useState,
+  useReducer,
+  useContext,
+  useEffect,
+} from "react";
 import classes from "../Contact/Contact.module.css";
 import emailClasses from "../Contact/EmailStatus.module.css";
 import emailjs from "@emailjs/browser";
@@ -85,19 +91,21 @@ const Contact = (props) => {
         "JioaKW-iFHKYcmt6F"
       );
 
-      console.log(result.text);
+      if (result.status !== "200") {
+        throw new Error("Could not successfully send email.");
+      }
+
+      dispatchSending({ type: "SEND_SUCCESSFUL" });
+      dispatchSending({ type: "NOT_SENDING" });
+      setStatusMsgVisible(false);
+      
     } catch (error) {
       setError(error.text);
       dispatchSending({ type: "NOT_SENDING" });
       dispatchSending({ type: "SEND_UNSUCCESSFUL" });
       setStatusMsgVisible(false);
     }
-    dispatchSending({ type: "SEND_SUCCESSFUL" });
-    dispatchSending({ type: "NOT_SENDING" });
-    setStatusMsgVisible(false);
-    setTimeout(() => {
-      setStatusMsgVisible(true);
-    }, 2000);
+    
     resetName();
     resetEmail();
     resetMessage();
@@ -105,7 +113,7 @@ const Contact = (props) => {
 
   useEffect(() => {
     setStatusMsgVisible(true);
-  }, [])
+  }, []);
 
   const { isSending, sendSuccessful } = sendingState;
   const nameClasses = `${classes.input} ${classes.name} ${
@@ -132,6 +140,16 @@ const Contact = (props) => {
         status="Email sent successfully!"
         className={`${classes.success} ${
           isDarkTheme ? classes["dark-success"] : ""
+        }`}
+        img={{ className: emailClasses["loading-spinner-hidden"] }}
+      />
+    );
+  } else if (!statusMsgVisible && error) {
+    emailStatus = (
+      <EmailStatus
+        status={error}
+        className={`${classes.error} ${
+          isDarkTheme ? classes["dark-error"] : ""
         }`}
         img={{ className: emailClasses["loading-spinner-hidden"] }}
       />
@@ -180,7 +198,6 @@ const Contact = (props) => {
         />
         {messageHasError && <ErrorMessage message="*Message is required" />}
         {emailStatus}
-        {error && <p className={classes.error}>{error}</p>}
         <button
           type="submit"
           className={`${classes["form-button"]} ${

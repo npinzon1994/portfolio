@@ -80,6 +80,10 @@
   color: rgb(170, 41, 41);
 }
 
+.dark-error {
+  color: rgb(221, 91, 91);
+}
+
 .form-button {
   padding: 14px;
   border-radius: 8px;

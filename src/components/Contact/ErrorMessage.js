@@ -10,7 +10,7 @@ const ErrorMessage = (props) => {
   return (
     <span
       className={`${classes.invalid} ${
-        isDarkTheme ? classes["invalid-dark"] : ""
+        isDarkTheme ? classes["dark-invalid"] : ""
       }`}
     >
       {props.message}
