@@ -19,6 +19,7 @@
 
 .dark-input {
   background: rgb(34, 34, 34);
+  color: #c4c4c4;
 }
 
 .input:focus {
@@ -50,6 +51,7 @@
 
 .dark-text-area {
   background: rgb(34, 34, 34);
+  color: #c4c4c4;
 }
 
 .text-area:focus{
@@ -76,6 +78,10 @@
 .success {
   font-size: larger;
   color: rgb(77, 131, 77);
+}
+
+.dark-success {
+  color: rgb(136, 212, 136);
 }
 
 .error {
