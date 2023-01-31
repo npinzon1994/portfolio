@@ -17,10 +17,20 @@
   font-size: large;
 }
 
+.dark-input {
+  background: rgb(34, 34, 34);
+}
+
 .input:focus {
   outline: none;
-  border-color: #2180ac;
-  background: #bfdbe9;
+  border-color: #c36ef5;
+  background: #f8edff;
+}
+
+.dark-input:focus {
+  outline: none;
+  border-color: #c36ef5;
+  background: none;
 }
 
 /*To be applied on name input to make title margins uniform*/
@@ -38,9 +48,29 @@
   resize: none;
 }
 
+.dark-text-area {
+  background: rgb(34, 34, 34);
+}
+
+.text-area:focus{
+  outline: none;
+  border-color: #c36ef5;
+  background: #f8edff;
+}
+
+.dark-text-area:focus {
+  outline: none;
+  border-color: #c36ef5;
+  background: none;
+}
+
 .invalid {
   color: rgb(170, 41, 41);
   margin-top: 6px;
+}
+
+.dark-invalid {
+  color: rgb(221, 91, 91);
 }
 
 .success {
@@ -53,7 +83,7 @@
   color: rgb(170, 41, 41);
 }
 
-.form button {
+.form-button {
   padding: 14px;
   border-radius: 8px;
   width: 100%;
@@ -67,6 +97,12 @@
   cursor: pointer;
   margin-top: 12px;
 }
+
+.dark-form-button {
+  box-shadow: none;
+}
+
+
 
 @media (max-width: 768px) {
   .container {

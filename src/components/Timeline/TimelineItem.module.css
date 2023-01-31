@@ -37,6 +37,11 @@
     
 }
 
+.dark-year {
+    background: #fff;
+    color: rgb(34, 34, 34);
+}
+
 .title {
     font-weight: 500;
     font-size: larger;
@@ -51,7 +56,11 @@
 
 .description {
     font-size: large;
-    color: #8b8b8b;
+    color: rgb(120, 113, 108);
+}
+
+.dark-description {
+    color: rgb(170, 162, 156);
 }
 
 @media (max-width: 425px) {

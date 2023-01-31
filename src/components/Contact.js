@@ -1,8 +1,9 @@
-import React, { useRef, useState, useReducer } from "react";
+import React, { useRef, useState, useReducer, useContext } from "react";
 import classes from "./Contact.module.css";
 import emailjs from "@emailjs/browser";
 import Title from "./UI/Title";
 import useInput from "../hooks/use-input";
+import ThemeContext from "../store/theme-context";
 
 //useReducer data
 const defaultState = { isSending: false, sendSuccessful: null };
@@ -29,6 +30,10 @@ const isValidEmail = (value) =>
 const Contact = (props) => {
   const [sendingState, dispatchSending] = useReducer(sendReducer, defaultState);
   const [error, setError] = useState();
+
+  const themeContext = useContext(ThemeContext);
+  const {theme} = themeContext;
+  const isDarkTheme = theme === 'dark';
 
   //useInput(s)
   const {
@@ -103,7 +108,7 @@ const Contact = (props) => {
   };
 
   const { isSending, sendSuccessful } = sendingState;
-  const nameClasses = `${classes.input} ${classes.name}`;
+  const nameClasses = `${classes.input} ${classes.name} ${isDarkTheme ? classes['dark-input'] : ''}`;
 
   return (
     <div className={classes.container}>
@@ -119,33 +124,33 @@ const Contact = (props) => {
           ref={nameInputRef}
           value={name}
         />
-        {nameHasError && <span className={classes.invalid}>*Name is required</span>}
+        {nameHasError && <span className={`${classes.invalid} ${isDarkTheme ? classes['dark-invalid'] : ''}`}>*Name is required</span>}
         <input
           type="email"
           placeholder="Email"
           name="email"
           onChange={emailChangeHandler}
           onBlur={validateEmailOnBlur}
-          className={classes.input}
+          className={`${classes.input} ${isDarkTheme ? classes['dark-input'] : ''}`}
           ref={emailInputRef}
           value={email}
         />
-        {emailHasError && <span className={classes.invalid}>*Invalid Email</span>}
+        {emailHasError && <span className={`${classes.invalid} ${isDarkTheme ? classes['dark-invalid'] : ''}`}>*Invalid Email</span>}
         <textarea
           placeholder="Message"
           name="message"
           rows="10"
           onChange={messageChangeHandler}
           onBlur={validateMessageOnBlur}
-          className={classes['text-area']}
+          className={`${classes['text-area']} ${isDarkTheme ? classes['dark-text-area'] : ''}`}
           ref={messageInputRef}
           value={message}
         />
-        {messageHasError && <span className={classes.invalid}>*Message is required</span>}
+        {messageHasError && <span className={`${classes.invalid} ${isDarkTheme ? classes['dark-invalid'] : ''}`}>*Message is required</span>}
         {isSending && <p>Sending Email...</p>}
         {sendSuccessful && !error && <p className={classes.success}>Email sent successfully!</p>}
         {error && <p className={classes.error}>{error}</p>}
-        <button type="submit">Let's Chat</button>
+        <button type="submit" className={`${classes['form-button']} ${isDarkTheme ? classes['dark-form-button'] : ''}`}>Let's Chat</button>
       </form>
     </div>
   );
