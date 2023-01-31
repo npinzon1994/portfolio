@@ -8,8 +8,8 @@
 
 .list-item:before {
     content: "";
-    width: 9px;
-    height: 9px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     position: absolute;
     left: 0;

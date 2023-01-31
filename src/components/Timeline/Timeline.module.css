@@ -31,9 +31,9 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 594px){
   .container {
-      max-width: 24rem;
+    max-width: 23rem;
   }
 }
 
