@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Intro.module.css";
-import pfp from "../assets/temporary-headshot.jpg";
+import pfp from "../assets/professional-headshot.jpg";
 
 const Intro = () => {
   return (

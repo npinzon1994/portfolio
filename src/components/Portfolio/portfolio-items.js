@@ -1,5 +1,5 @@
 import bbScreenshot from "../../assets/bb-screenshot.PNG";
-import portfolioScreenshot from "../../assets/portfolio-screenshot.png";
+import portfolioScreenshot from "../../assets/github-screenshot.png";
 
 const languages = {
   budgetBreakdown: ["React", "Javascript", "CSS"],
