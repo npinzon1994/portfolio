@@ -158,7 +158,7 @@ const Contact = (props) => {
 
   return (
     <div className={classes.container}>
-      <Title title="Contact" />
+      <Title title="Contact" style={{'margin-left': 20}}/>
       <form onSubmit={submitForm} ref={form} className={classes.form}>
         <input
           type="text"

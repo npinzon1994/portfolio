@@ -15,7 +15,7 @@ const items = portfolioItems.map((item) => (
   />
 ));
 
-const Portfolio = (props) => {
+const Portfolio = () => {
   return (
     <div className={classes.container}>
       <ul className={classes.portfolio}>{items}</ul>

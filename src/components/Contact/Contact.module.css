@@ -1,12 +1,13 @@
 .container {
   width: 100%;
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 0 auto 20px auto;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  margin: 0 20px;
 }
 
 .input {
@@ -105,7 +106,7 @@
 
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
       max-width: 32rem;
   }
@@ -127,4 +128,4 @@
   .container {
       max-width: 17rem;
   }
-}
+} */

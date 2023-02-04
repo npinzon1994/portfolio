@@ -1,0 +1,19 @@
+.container {
+    width: 100%;
+    max-width: 42rem;
+}
+
+.skills-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.skill {
+    height: 60px;
+    width: 60px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}

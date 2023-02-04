@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import Intro from "./components/Intro";
+import Intro from "./components/Intro/Intro";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Timeline from "./components/Timeline/Timeline";
 import Contact from "./components/Contact/Contact";

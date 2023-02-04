@@ -3,7 +3,7 @@ import classes from './Title.module.css';
 
 const Title = (props) => {
   return (
-    <h2 className={classes.title}>{props.title}</h2>
+    <h2 className={classes.title} style={props.style}>{props.title}</h2>
   )
 }
 

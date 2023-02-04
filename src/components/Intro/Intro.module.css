@@ -1,12 +1,12 @@
 .container {
-    text-align: center;
+    justify-content: center;
     width: 100%;
-    max-width: 40rem;
+    max-width: 42rem;
     margin: 26px auto 18px auto;
     display: flex;
     flex-direction: column;
 }
-.container img {
+.headshot {
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -18,6 +18,7 @@
     margin-top: 4px;
     margin-bottom: 0;
     font-size: 54pt;
+    text-align: center;
 }
 
 .container h3 {
@@ -27,7 +28,7 @@
 
 .container p {
     text-align: justify;
-    margin: 10px auto 16px auto;
+    margin: 10px 20px 16px 20px;
     font-size: larger;
     font-weight: 500;
 }

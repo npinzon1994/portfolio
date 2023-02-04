@@ -3,6 +3,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-right: 70px;
     
 }
 
@@ -66,16 +67,16 @@
 @media (max-width: 425px) {
     .year {
         font-size: small;
-        margin-bottom: 8px;
-        margin-right: 16px;
+        /* margin-bottom: 8px;
+        margin-right: 16px; */
     }
 
     .title{
         font-size: large;
-        margin-bottom: 6px;
+        /* margin-bottom: 6px; */
     }
 
     .duration{
-        margin-bottom: 6px;
+        /* margin-bottom: 6px; */
     }
   }

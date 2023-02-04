@@ -6,6 +6,7 @@ import Title from "../UI/Title";
 
 const items = timelineItems.map((item) => (
   <TimelineItem
+    key={item.id}
     year={item.year}
     title={item.title}
     duration={item.duration}
@@ -16,7 +17,7 @@ const items = timelineItems.map((item) => (
 const Timeline = (props) => {
   return (
     <div className={classes.container}>
-      <Title title='Timeline'/>
+      <Title title="Timeline" style={{'margin-left': 20}}/>
       <ul className={classes.timeline}>{items}</ul>
     </div>
   );
