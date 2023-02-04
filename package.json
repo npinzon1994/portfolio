@@ -41,6 +41,5 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  },
-  "homepage": "http://npinzon1994.github.io/portfolio"
+  }
 }
