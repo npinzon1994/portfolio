@@ -13,7 +13,7 @@ const Intro = () => {
       <p>
         I'm an independent Front-End Web Developer looking to ease the lives of
         everyone around me through code. My passion for clean, component-driven
-        design and problem solving are what drive me to create the best products
+        design and problem solving is what drives me to create the best products
         possible.
       </p>
     </div>
