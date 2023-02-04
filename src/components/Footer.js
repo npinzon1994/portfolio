@@ -1,5 +1,7 @@
 import React from "react";
 import classes from "./Footer.module.css";
+import githubIcon from '../assets/github-icon.svg';
+import linkedinIcon from '../assets/linkedin-icon.svg';
 
 const Footer = (props) => {
   return (
@@ -7,7 +9,7 @@ const Footer = (props) => {
       <div className={classes["social-links"]}>
         <a href="https://github.com/npinzon1994" target="_blank" rel="noreferrer">
           <img
-            src="https://svgshare.com/i/W_.svg"
+            src={githubIcon}
             title="github icon"
             alt="github logo"
             className={classes.github}
@@ -15,7 +17,7 @@ const Footer = (props) => {
         </a>
         <a href="https://www.linkedin.com/in/nikkipinzon/" target="_blank" rel="noreferrer">
           <img
-            src="https://svgshare.com/i/Ng.svg"
+            src={linkedinIcon}
             title="linkedin"
             alt="linkedin logo"
             className={classes.linkedin}
